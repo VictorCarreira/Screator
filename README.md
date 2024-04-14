@@ -18,7 +18,17 @@ A simple code to make it simple to create and modify Gempy's surface points file
 
 6- repeat the process until you reach your desired number of features.
 
+## Contact:
 
+In case of doubts, don't hesitate to get in touch with victorcarreira@id.uff.br 
+
+## Curriculum:
+
+[Victor Carreira](http://buscatextual.cnpq.br/buscatextual/visualizacv.do;jsessionid=99D3A777CDBF192CFCF301A98FD59EE5.buscatextual_0)
+
+## Website:
+
+[More of me](https://carreiras.netlify.app/)
 
 ## References:
 
