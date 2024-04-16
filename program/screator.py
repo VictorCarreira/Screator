@@ -31,7 +31,7 @@ sys.path.insert(0, dir_path)
 from modeling import drilling
 
 ########################################################################################################
-################################## LEITURA DA SEÇÃO E CRIAÇÃO DOS  ###############################
+################################## LEITURA DA SEÇÃO E CRIAÇÃO DOS PERFIS $##############################
 ########################################################################################################
 
 # Leitura da seção geológica:
@@ -43,12 +43,12 @@ ma = io.imread(caminho_img, as_gray=False, pilmode="RGBA")
 nx = np.shape(ma)[1]
 nz = np.shape(ma)[0]
 
-print("###### Dimensões da seção geológica em metros ######")
+print("###### Geologic section in meters ######")
 print("Distância horizontal (m):",nx)
 print("Distância vertical (m):",nz)
 
 
-print("############## Coordenadas da Surface ###############") 
+print("############## Surface Coordinates ###############") 
 x,y = drilling(ma) # Função para marcar as coordenadas da surface horizontalmente e verticalmente. e vertical
 print("#####################################################") 
 
@@ -61,7 +61,7 @@ y_m = np.linspace(0, 8880, nz, endpoint=True)[[int(i) for i in y]] # alter the r
 surface = input("Nome da surface: ")
 # Crie um dataframe com as colunas X, Y, Z e Formation
 df = pd.DataFrame({
-    'X': [1000]*len(x_m),  # A coluna X terá o valor 1000 para todas as linhas
+    'X': [1000]*len(x_m),  # A coluna X terá o valor 1000 para todas as linhas para modelos pseudo 3Ds
     'Y': x_m,
     'Z': y_m,
     'Formation': [surface]*len(x_m)  # A coluna Formation terá o mesmo valor para todas as linhas
