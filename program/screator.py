@@ -24,7 +24,7 @@ from skimage import data, io
 import os
 import sys
 # Obtenha o caminho absoluto do diretório que contém os módulos
-dir_path = os.path.abspath('../modulos/')
+dir_path = os.path.abspath('../mod/')
 # Adicione o caminho ao sys.path
 sys.path.insert(0, dir_path)
 # Agora você pode importar os módulos
@@ -35,7 +35,7 @@ from modeling import drilling
 ########################################################################################################
 
 # Leitura da seção geológica:
-caminho_img = '../entradas/santos.png'
+caminho_img = '../input/santos.png'
 ma = io.imread(caminho_img, as_gray=False, pilmode="RGBA")
 
 # conversão de coordenadas em pixel para metros
@@ -53,8 +53,8 @@ x,y = drilling(ma) # Função para marcar as coordenadas da surface horizontalme
 print("#####################################################") 
 
 # Converta as coordenadas de pixel para metros
-x_m = np.linspace(0, 20500, nx, endpoint=True)[[int(i) for i in x]]
-y_m = np.linspace(0, 8880, nz, endpoint=True)[[int(i) for i in y]]
+x_m = np.linspace(0, 20500, nx, endpoint=True)[[int(i) for i in x]]# alter the range of the x axis according to the real scale in meters
+y_m = np.linspace(0, 8880, nz, endpoint=True)[[int(i) for i in y]] # alter the range of the y axis according to the real scale in meters
 
 # Agora 'x_m' e 'y_m' são as coordenadas em metros
 
@@ -68,4 +68,4 @@ df = pd.DataFrame({
 })
 
 # Salve o dataframe em um arquivo
-df.to_csv('../saidas/' + surface +'.txt', index=False, sep=' ')
+df.to_csv('../output/' + surface +'.txt', index=False, sep=' ')
